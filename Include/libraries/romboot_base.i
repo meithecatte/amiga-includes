@@ -1,0 +1,37 @@
+	IFND	LIBRARIES_ROMBOOT_BASE_I
+LIBRARIES_ROMBOOT_BASE_I=	1
+	IFND	EXEC_TYPES_I
+	INCLUDE	exec/types.i
+	ENDC
+	IFND	EXEC_NODES_I
+	INCLUDE	exec/nodes.i
+	ENDC
+	IFND	EXEC_LISTS_I
+	INCLUDE	exec/lists.i
+	ENDC
+	IFND	EXEC_LIBRARIES_I
+	INCLUDE	exec/libraries.i
+	ENDC
+	IFND	EXEC_EXECBASE_I
+	INCLUDE	exec/execbase.i
+	ENDC
+	IFND	EXEC_EXECNAME_I
+	INCLUDE	exec/execname.i
+	ENDC
+	RSRESET
+RomBootBase	RS.B	LIB_SIZE
+rbb_ExecBase	RS.L	1
+rbb_BootList	RS.B	LH_SIZE
+rbb_Reserved	RS.B	16
+rbb_SIZEOF	RS.B	0
+	RSRESET
+BootNode	RS.B	LN_SIZE
+bn_Flags	RS.W	1
+bn_DeviceNode	RS.L	1
+BootNode_SIZEOF	RS.B	0
+
+ROMBOOT_NAME	MACRO
+	DC.B	'romboot.library',0
+	DS.W	0
+	ENDM
+	ENDC

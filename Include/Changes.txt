@@ -1,0 +1,7 @@
+-----------------------------------------------------
+---  Changes made to converted CBM Include Files  ---
+-----------------------------------------------------
+
+In all include files	EQU -> =
+Macros translated into RS directives for speed improvements.
+Some unneeded brackets removed, square brackets used instead.

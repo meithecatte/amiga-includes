@@ -1,0 +1,21 @@
+	IFND	LIBRARIES_MATHLIBRARY_I
+LIBRARIES_MATHLIBRARY_I	=	1
+	IFND	EXEC_TYPES_I
+	INCLUDE	exec/types.i
+	ENDC
+	IFND	EXEC_LIBRARIES_I
+	INCLUDE	exec/libraries.i
+	ENDC
+	RSRESET
+MathIEEEBase		RS.B	0
+MathIEEEBase_LibNode	RS.B	LIB_SIZE
+MathIEEEBase_Flags	RS.B	1
+MathIEEEBase_reserved1	RS.B	1
+MathIEEEBase_68881	RS.L	1
+MathIEEEBase_SysLib	RS.L	1
+MathIEEEBase_SegList	RS.L	1
+MathIEEEBase_Resource	RS.L	1
+MathIEEEBase_TaskOpenLib	RS.L	1
+MathIEEEBase_TaskCloseLib	RS.L	1
+MathIEEEBase_SIZE	RS.B	0
+	ENDC

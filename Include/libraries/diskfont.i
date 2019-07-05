@@ -1,0 +1,50 @@
+	IFND	LIBRARIES_DISKFONT_I
+LIBRARIES_DISKFONT_I	=	1
+	IFND	EXEC_NODES_I
+	INCLUDE	exec/nodes.i
+	ENDC
+	IFND	EXEC_LISTS_I
+	INCLUDE	exec/lists.i
+	ENDC
+	IFND	GRAPHICS_TEXT_I
+	INCLUDE	graphics/text.i
+	ENDC
+MAXFONTPATH	=	256
+	RSRESET
+FC		RS.B	0
+fc_FileName	RS.B	MAXFONTPATH
+fc_YSize	RS.W	1
+fc_Style	RS.B	1
+fc_Flags	RS.B	1
+fc_SIZEOF	RS.W	0
+FCH_ID		=	$0f00
+	RSRESET
+FCH		RS.B	0
+fch_FileID	RS.W	1
+fch_NumEntries	RS.W	1
+fch_FC		RS.W	0
+DFH_ID		=	$0f80
+MAXFONTNAME	=	32
+	RSRESET
+DiskFontHeader	RS.B	0
+dfh_DF		RS.B	LN_SIZE
+dfh_FileID	RS.W	1
+dfh_Revision	RS.W	1
+dfh_Segment	RS.L	1
+dfh_Name	RS.B	MAXFONTNAME
+dfh_TF		RS.B	tf_SIZEOF
+dfh_SIZEOF	RS.W	0
+AFB_MEMORY	=	0
+AFF_MEMORY	=	1<<0
+AFB_DISK	=	1
+AFF_DISK	=	1<<1
+	RSRESET
+AF		RS.B	0
+af_Type		RS.W	1
+af_Attr		RS.B	ta_SIZEOF
+af_SIZEOF	RS.W	0
+	rsreset
+AFH		RS.B	0
+afh_NumEntries	RS.W	1
+afh_AF		RS.W	0
+	ENDC

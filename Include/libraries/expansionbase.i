@@ -1,0 +1,49 @@
+	IFND	LIBRARIES_EXPANSIONBASE_I
+LIBRARIES_EXPANSIONBASE_I=	1
+	IFND	EXEC_TYPES_I
+	INCLUDE	exec/types.i
+	ENDC
+	IFND	EXEC_LIBRARIES_I
+	INCLUDE	exec/libraries.i
+	ENDC
+	IFND	EXEC_INTERRUPTS_I
+	INCLUDE	exec/interrupts.i
+	ENDC
+	IFND	EXEC_SEMAPHORES_I
+	INCLUDE	exec/semaphores.i
+	ENDC
+	IFND	LIBRARIES_CONFIGVARS_I
+	INCLUDE	libraries/configvars.i
+	ENDC
+TOTALSLOTS	=	256
+	RSRESET
+ExpansionInt	RS.B	0
+ei_IntMask	RS.W	1
+ei_ArrayMax	RS.W	1
+ei_ArraySize	RS.W	1
+ei_Array	RS.B	0
+ExpansionInt_SIZEOF	RS.B	0
+	RSRESET
+ExpansionBase		RS.B	LIB_SIZE
+eb_Flags		RS.B	1
+eb_pad			RS.B	1
+eb_ExecBase		RS.L	1
+eb_SegList		RS.L	1
+eb_CurrentBinding	RS.B	CurrentBinding_SIZEOF
+eb_BoardList		RS.B	LH_SIZE
+eb_MountList		RS.B	LH_SIZE
+eb_AllocTable		RS.B	TOTALSLOTS
+eb_BindSemaphore	RS.B	SS_SIZE
+eb_Int2List		RS.B	IS_SIZE
+eb_Int6List		RS.B	IS_SIZE
+eb_Int7List		RS.B	IS_SIZE
+ExpansionBase_SIZEOF	RS.B	0
+EE_LASTBOARD	=	40
+EE_NOEXPANSION	=	41
+EE_NOBOARD	=	42
+EE_NOMEMORY	=	42
+EBB_CLOGGED	=	0
+EBF_CLOGGED	=	1<<0
+EBB_SHORTMEM	=	1
+EBF_SHORTMEM	=	1<<1
+	ENDC

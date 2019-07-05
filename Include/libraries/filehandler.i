@@ -1,0 +1,46 @@
+	IFND	LIBRARIES_FILEHANDLER_I
+LIBRARIES_FILEHANDLER_I	=	1
+	IFND	EXEC_TYPES_I
+	INCLUDE	exec/types.i
+	ENDC
+	IFND	EXEC_PORTS_I
+	INCLUDE	exec/ports.i
+	ENDC
+	IFND	LIBRARIES_DOS_I
+	INCLUDE	libraries/dos.i
+	ENDC
+DE_TABLESIZE	=	0
+DE_SIZEBLOCK	=	1
+DE_SECORG	=	2
+DE_NUMHEADS	=	3
+DE_SECSPERBLK	=	4
+DE_BLKSPERTRACK	=	5
+DE_RESERVEDBLKS	=	6
+DE_PREFAC	=	7
+DE_INTERLEAVE	=	8
+DE_LOWCYL	=	9
+DE_UPPERCYL	=	10
+DE_NUMBUFFERS	=	11
+DE_MEMBUFTYPE	=	12
+	RSRESET
+FileSysStartupMsg	RS.B	0
+fssm_Unit		RS.L	1
+fssm_Device		RS.L	1
+fssm_Environ		RS.L	1
+fssm_Flags		RS.L	1
+FileSysStartupMsg_SIZEOF	RS.W	0
+	RSRESET
+DeviceNode	RS.B	0
+dn_Next		RS.L	1
+dn_Type		RS.L	1
+dn_Task		RS.L	1
+dn_Lock		RS.L	1
+dn_Handler	RS.L	1
+dn_StackSize	RS.L	1
+dn_Priority	RS.L	1
+dn_Startup	RS.L	1
+dn_SegList	RS.L	1
+dn_GlobalVec	RS.L	1
+dn_Name		RS.L	1
+DeviceNode_SIZEOF	RS.W	0
+	ENDC
